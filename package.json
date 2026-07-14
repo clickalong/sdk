@@ -1,0 +1,82 @@
+{
+  "name": "@clickalong/sdk",
+  "version": "0.1.2",
+  "description": "Typed loader for the Clickalong support widget: injects widget.js and queues API calls made before it loads.",
+  "keywords": [
+    "clickalong",
+    "customer-support",
+    "support-widget",
+    "guided-tours",
+    "javascript",
+    "typescript",
+    "sdk",
+    "react",
+    "vite"
+  ],
+  "homepage": "https://clickalong.ai",
+  "author": {
+    "name": "Clickalong",
+    "url": "https://clickalong.ai"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clickalong/sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/clickalong/sdk/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "check:package": "publint",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run verify",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "verify": "npm run typecheck && npm run test && npm run build && npm run check:package"
+  },
+  "devDependencies": {
+    "happy-dom": "^20.0.0",
+    "publint": "^0.3.21",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^4.1.10"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "fsevents@2.3.3": true
+  }
+}
