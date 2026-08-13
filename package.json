@@ -1,7 +1,7 @@
 {
   "name": "@clickalong/sdk",
-  "version": "0.1.2",
-  "description": "Typed loader for the Clickalong support widget: injects widget.js and queues API calls made before it loads.",
+  "version": "0.2.0",
+  "description": "Typed loader for the Clickalong support widget, guided tours, and confirmed host actions.",
   "keywords": [
     "clickalong",
     "customer-support",
